@@ -58,8 +58,6 @@ const AddNewCustomer = () => {
     
     return (
         <div className='main-container'>
-            <section className="form-section">
-                <div className='auth-content'>
                     <h1>Add New Customer</h1>
                     <form onSubmit={saveCustomer} id='dataForm'>
                         {inputFields.map((field,index)=> (
@@ -82,9 +80,7 @@ const AddNewCustomer = () => {
                         <div className="success-modal">
                         <p>Record saved successfully!</p>
                         </div>
-                    )}
-                </div>
-            </section>
+                    )} 
         </div>
     );
 }

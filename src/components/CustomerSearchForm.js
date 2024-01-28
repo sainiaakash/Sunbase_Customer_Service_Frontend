@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const CustomerSearchForm = ({ onSearch }) => {
-  const [searchField, setSearchField] = useState('firstName');
+  const [searchField, setSearchField] = useState('');
   const [searchValue, setSearchValue] = useState('');
 
   const handleSearch = (event) => {
@@ -10,21 +10,19 @@ const CustomerSearchForm = ({ onSearch }) => {
   };
 
   return (
-    <div className="search-container">
-      <h2>Customer Search</h2>
+    <div>
       <form onSubmit={handleSearch}>
-        <label htmlFor="searchField">Search by:</label>
+        <div className='search-form'>
         <select
           id="searchField"
           name="searchField"
           value={searchField}
-          onChange={(e) => setSearchField(e.target.value)}
-        >
-          <option value="firstName">First Name</option>
-          <option value="city">City</option>
-          <option value="email">Email</option>
-          <option value="phone">Phone</option> 
-
+          onChange={(e) => setSearchField(e.target.value)}>
+            <option value="" disabled>Search By</option>
+            <option value="firstName">First Name</option>
+            <option value="city">City</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone</option> 
         </select>
         <input
           type="text"
@@ -35,7 +33,9 @@ const CustomerSearchForm = ({ onSearch }) => {
           onChange={(e) => setSearchValue(e.target.value)}
           required
         />
-        <button type="submit">Search</button>
+        <button className='search-btn' type="submit">Search</button>
+        </div>
+        
       </form>
     </div>
   );

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import CustomerSearchForm from '../components/CustomerSearchForm';
 import CustomerTable from '../components/CustomerTable';
-import '../styles/ListStyle.css';
+import AddNewCustomer from './AddNewCustomer';
+import '../styles/listPage.css';
 
 const CustomerListPage = () => {
   const [customerList, setCustomerList] = useState([]);
@@ -68,7 +69,7 @@ const CustomerListPage = () => {
     }
   }
 
-  const handleSave = async(customerId,editedCustomer) => {
+  const handleSave = async(customerId, editedCustomer) => {
     console.log(editedCustomer);
     try{
       const response = await fetch(`http://localhost:8080/update`,{
@@ -89,12 +90,7 @@ const CustomerListPage = () => {
 
   return (
     <div>
-      <CustomerSearchForm onSearch={performSearch} />
-      <CustomerTable 
-        customerList={customerList}
-        onDelete={handleDelete}
-        onSave={handleSave}
-      />
+      <CustomerTable customerList={customerList} onDelete={handleDelete} onSave={handleSave} performSearch={performSearch} />
     </div>
   );
 };

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import '../styles/ListStyle.css';
+import CustomerSearchForm from '../components/CustomerSearchForm';
+import AddNewCustomer from '../pages/AddNewCustomer';
+import '../styles/listPage.css';
+import {useNavigate} from 'react-router-dom';
 
-const CustomerTable = ({ customerList, onDelete, onSave}) => {
+const CustomerTable = ({ customerList, onDelete, onSave, performSearch }) => {
   const [editableRowId, setEditableRowId] = useState(null);
   const [editedRowData, setEditedRowData] = useState('');
-
+  const navigate = useNavigate();
 
   const handleEditClick = (customerId,index) => {
       setEditedRowData(customerList[index]);
@@ -32,8 +35,16 @@ const CustomerTable = ({ customerList, onDelete, onSave}) => {
     }));
   }
 
+  const OnAddCustomerButtonClick = () => {
+    navigate('/add-customer');
+  }
+
   return (
     <div className="table-container">
+      <div className="upper-section">
+            <button className='add-customer-btn' name='addCustomerButton' onClick={OnAddCustomerButtonClick} >Add Customer</button>
+            <CustomerSearchForm onSearch={performSearch} />
+      </div>
       <h2>Customer List</h2>
       <table>
         <thead>
@@ -64,17 +75,18 @@ const CustomerTable = ({ customerList, onDelete, onSave}) => {
               <td>{isRowEditable(customer.id) ? <input id="phone" name="phone" type="text" defaultValue={customer.phone} onChange={handleInputChange}/> : customer.phone}</td>
               <td>
               {isRowEditable(customer.id) ? (
-                  <button onClick={() => handleSaveClick(customer.id)}>Save</button>
+                  <button className='save-btn' onClick={() => handleSaveClick(customer.id)}>Save</button>
                 ) : (
-                  <button onClick={() => handleEditClick(customer.id, rowIndex)}>Edit</button>
+                  <button className='action-btn' onClick={() => handleEditClick(customer.id, rowIndex)}>Edit</button>
                 )}
-                  <button onClick={() => onDelete(customer.id)}> Delete</button>
+                  <button className='action-btn' onClick={() => onDelete(customer.id)}> Delete</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+  
   );
 };
 
