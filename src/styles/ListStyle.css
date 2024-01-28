@@ -1,0 +1,98 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.search-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.search-input label {
+    width: 120px;
+    margin-right: 10px;
+    line-height: 30px;
+}
+
+.search-input select,
+.search-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-input button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-input button:hover {
+    background-color: #2980b9;
+}
+
+tbody input {
+    width: 100%; /* Set the width to 100% to fill the available space in the container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+
+.table-container {
+    max-width: 1000px;
+    margin: 0px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead th, tbody td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+thead th {
+    background-color: #f2f2f2;
+}
+
+tbody td {
+    vertical-align: top;
+}
+
+tbody td:last-child {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+tbody button {
+    border-radius: 10px; /* Adjust the value to control the roundness of the corners */
+  }

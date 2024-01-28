@@ -1,0 +1,92 @@
+body {
+    height: 100%;
+    padding: 0;
+    margin:0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.auth-content {
+    border-radius: 20px;
+    padding: 5px 250px 0;
+    width: 45%;
+}
+
+.form-section {
+    display: flex;
+    width: auto;
+    flex: 1;
+}
+
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #eaeaed;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
+    font-family:  var(--font-face, "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,);
+    font-size: 15px;
+    color: #0d0c22;
+    outline: none;
+    width: 50%;
+    border:none;
+}
+
+input:focus {
+    border-color: rgba(234,76,137,0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(234,76,137,0.1);
+}
+
+input:hover {
+        border-color: rgba(0,0,0,0.1);
+        background-color: #fff;
+        -webkit-box-shadow: 0 0 0 4px rgba(234,76,137,0.1);
+        box-shadow: 0 0 0 4px rgba(234,76,137,0.1);
+}
+
+.submit-btn {
+    width: 53%;
+    color: white;
+    background-color: #0d0c22;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
+    font-family:  var(--font-face, "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,);
+    font-size: 15px;
+    height:50px;
+    outline: none;
+    border:none;
+}
+
+.submit-btn:hover {
+    background-color: #565564;
+}
+
+h1 {
+    font: bold 24px/29px var(--font-face, "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif);
+}
+
+.form-field-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-field{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 3px;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-right: 25px;
+    border: none;
+}
